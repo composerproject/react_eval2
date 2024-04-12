@@ -17,22 +17,6 @@ export const addPost = createAsyncThunk(
     }
 )
 
-// export const deletePost = createAsyncThunk(
-//     'post/deletePost',
-//     async (data) => {
-//         const {status} = await axios.delete(`https://jsonplaceholder.typicode.com/posts/${data}`)
-//         return {status, id: data}
-//     }
-// )
-
-// export const updatePost = createAsyncThunk(
-//     'post/updatePost',
-//     async (data) => {
-//         const response = await axios.put(`https://jsonplaceholder.typicode.com/posts/${data.id}`, data)
-//         return response.data
-//     }
-// )
-
 const postSlice = createSlice({
     name: "post",
     initialState: {
@@ -62,23 +46,12 @@ const postSlice = createSlice({
             state.post.title = '';
             state.post.body = '';
         })
-        // builder.addCase(deletePost.fulfilled, (state, action) => {
-        //     const {status, id} = action.payload
-        //     if(status === 200) {
-        //         state.posts = state.posts.filter(post => post.id !== id)
-        //     }
-        // })
-        // builder.addCase(updatePost.fulfilled, (state,action) => {
-        //     state.posts = state.posts.map(post => post.id === action.payload.id ? action.payload : post)
-        // })
     }
 })
 
 export const {
     setPostTitle,
-    setPostBody,
-    togglePostComplete,
-    deletePost
+    setPostBody
 } = postSlice.actions;
 
 export default postSlice.reducer;

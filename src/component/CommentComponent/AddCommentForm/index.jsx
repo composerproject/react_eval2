@@ -48,7 +48,7 @@ const AddCommentForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Add a comment</h3>
+      <h3>Ajouter un commentaire</h3>
       <div>
         <input
           onChange={handleTitleChange}
@@ -67,8 +67,8 @@ const AddCommentForm = () => {
           placeholder="Le contenu de votre commentaire"
         />
       </div>
-      <input type={"submit"} disabled={isLoadingAddAction} value={"Add"} />
-      {isLoadingAddAction && <p>Processing...</p>}
+      <input type={"submit"} disabled={isLoadingAddAction} value={"Ajouter"} />
+      {isLoadingAddAction && <p>Chargement...</p>}
     </form>
   );
 };

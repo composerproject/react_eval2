@@ -17,22 +17,6 @@ export const addComment = createAsyncThunk(
     }
 )
 
-// export const deleteComment = createAsyncThunk(
-//     'comment/deleteComment',
-//     async (data) => {
-//         const {status} = await axios.delete(`https://jsonplaceholder.typicode.com/comments/${data}`)
-//         return {status, id: data}
-//     }
-// )
-
-// export const updateComment = createAsyncThunk(
-//     'comment/updateComment',
-//     async (data) => {
-//         const response = await axios.put(`https://jsonplaceholder.typicode.com/comments/${data.id}`, data)
-//         return response.data
-//     }
-// )
-
 const commentSlice = createSlice({
     name: "comment",
     initialState: {
@@ -67,23 +51,12 @@ const commentSlice = createSlice({
             state.comment.body = '';
             state.isInitialised = true;
         })
-        // builder.addCase(deleteComment.fulfilled, (state, action) => {
-        //     const {status, id} = action.payload
-        //     if(status === 200) {
-        //         state.comments = state.comments.filter(comment => comment.id !== id)
-        //     }
-        // })
-        // builder.addCase(updateComment.fulfilled, (state,action) => {
-        //     state.comments = state.comments.map(comment => comment.id === action.payload.id ? action.payload : comment)
-        // })
     }
 })
 
 export const {
     setCommentTitle,
     setCommentBody,
-    toggleCommentComplete,
-    deleteComment,
     addSyncComment
 } = commentSlice.actions;
 
