@@ -1,0 +1,25 @@
+.loaderContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background: transparent;
+
+  .loader {
+    width: 150px;
+    height: 150px;
+    border-radius: 150px;
+    border-bottom: 3px solid orange;
+    animation: 3s rotate infinite;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
